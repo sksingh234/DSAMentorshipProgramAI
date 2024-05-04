@@ -1,5 +1,6 @@
-/*  Find the element x in the array . Take array and
-x as input.
+/*  Count the number of elements in given array
+greater than a given number x.
+
 */
 #include <iostream>
 using namespace std;
@@ -15,15 +16,16 @@ int main()
     cout << "enter the value of element x :";
     cin >> elementx;
 
-    int result = 0;
+    int count = 0;
     for (int idx = 0; idx < 5; idx++)
     {
-        if (arr[idx] == elementx)
+        if (arr[idx] > elementx)
         {
-            cout << "the element " << elementx << " is present at index " << idx<<endl;
+            count++;
         }
         else
-        continue;
+            continue;
     }
+    cout << "total number greater than " << elementx << " is :" << count;
     return 0;
 }
