@@ -18,7 +18,7 @@ int main(){
     vector<int> v2(v.size());
     for (int i = 0; i < v.size(); i++)
     {
-        int j = v.size()- 1-i;
+        int j = v.size()-1-i;
         v2[i] = v[j];
     }
     display(v2);
