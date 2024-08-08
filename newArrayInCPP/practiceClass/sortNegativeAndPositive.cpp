@@ -9,13 +9,11 @@ void sort(vector<int> &a)
     {
         if (a[i] < 0)
             i++;
-        else if (a[j] > 0)
+        else if (a[j] >= 0)
             j--;
-        else if (a[i] > 0 && a[j] < 0)
+        else if (a[i] >= 0 && a[j] < 0)
         {
-            int temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+            swap(a[i],a[j]);
             i++;
             j--;
         }
@@ -33,6 +31,6 @@ int main()
     sort(v);
     for (int i = 0; i < v.size(); i++)
     {
-        cout << v[i];
+        cout << v[i]<<" ";
     }
 }
