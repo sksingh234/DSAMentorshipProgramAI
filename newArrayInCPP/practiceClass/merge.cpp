@@ -6,7 +6,7 @@ vector<int> merge(vector<int> &a, vector<int> &b)
     int n = a.size();
     int m = b.size();
     vector<int> res(n + m);
-    int k = res[k];
+    int k = 0;
     int i = 0;
     int j = 0;
     while (i <= n && j <= m)
