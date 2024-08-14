@@ -5,32 +5,33 @@ vector<int> merge(vector<int> &a, vector<int> &b)
 {
     int n = a.size();
     int m = b.size();
-    vector<int> res(n + m);
+    vector<int> res(n + m,0);
     int k = 0;
     int i = 0;
     int j = 0;
     while (i <= n && j <= m)
     {
-        if (a[i] < b[j])
+        if (i == n)
+        {
+            res[k] = b[j];
+            j++;
+        }
+
+        else if (j == m)
         {
             res[k] = a[i];
             i++;
         }
-        else if (b[j] < a[i])
+        else if (a[i] < b[j])
         {
-            res[k] = b[j];
-            j++;
-        }
-        else if (i == n)
-        {
-            res[k] = b[j];
-            j++;
+            res[k] = a[i];
+            i++;
         }
         else
         {
-            res[k] = a[i];
-            i++;
-        }
+            res[k] = b[j];
+            j++;
+        } 
         k++;
     }
     return res;
